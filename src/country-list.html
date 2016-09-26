@@ -1,8 +1,8 @@
 <template>
   <section class="au-animate">
-    <h2>${heading}</h2>
+    <h2>${heading} <button class="btn btn-info" id="showAll" click.delegate="showAll()">Show All</button></h2>
     <div class="row au-stagger">
-      <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="country of countries">
+      <div class="col-sm-6 col-md-3 card-container au-animate country-${country.enabled ? 'enabled' : 'disabled'}"  repeat.for="country of countries">
         <div class="card">
           <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
           <div class="avatar">
@@ -10,7 +10,7 @@
           </div>
           <div class="content">
             <p class="name">${country.name}</p>
-            <p><a target="_blank" class="btn btn-default" href="mailto:embassy@onu.org">Contact</a></p>
+            <p><a class="btn btn-default update-country" href="/#/countries/${country.id}">Update</a></p>
           </div>
         </div>
       </div>

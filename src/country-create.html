@@ -2,6 +2,9 @@
   <section class="au-animate">
     <h2>${heading}</h2>
     <form role="form" submit.delegate="submit()">
+      <div class="alert alert-danger" if.bind="countryError" id="countryError">
+        ${countryError}
+      </div>
       <div class="form-group">
         <label for="countryName">Insert here the name of the country.</label>
         <input type="text" value.bind="countryName" class="form-control" id="countryName" placeholder="Country name">

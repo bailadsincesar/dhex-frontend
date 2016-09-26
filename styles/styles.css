@@ -173,3 +173,7 @@ div.au-stagger {
     opacity: 1;
   }
 }
+
+.country-disabled > div{
+  background-color: #C9C9C9;
+}

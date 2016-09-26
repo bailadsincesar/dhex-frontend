@@ -1,15 +1,14 @@
 Page = require('astrolabe').Page
 
 module.exports = Page.create
-  url: get: -> browser.baseUrl + '#/countries/create'
+  url: get: -> browser.baseUrl + '#/countries/1'
 
-  countryNameInput: get: -> element(By.valueBind('countryName'))
+  countryNameEnabled: get: -> element(By.css('#countryEnabled'))
+  countryUpdateName: get: -> element(By.css('#countryName'))
   saveButton: get: -> element(By.css('.btn.btn-default'))
-  labelForInput: get: -> element(By.css('[for="countryName"]'))
-  errorMessage: get: -> element(By.css('#countryError'))
 
-  save: value: (countryName) ->
-    @countryNameInput.sendKeys(countryName)
+  updateEnabled: value: () ->
+    @countryNameEnabled.click()    
     @saveButton.click()
 
   openAlertDialog: value: () ->
@@ -24,3 +23,6 @@ module.exports = Page.create
             return false
         )
       )
+
+ 
+ 

@@ -5,7 +5,7 @@ export class CountryManagement {
     config.map([
       { route: ['', 'list'], name: 'list', moduleId: './country-list', nav: true, title: 'Country List' },
       { route: 'create', name: 'create', moduleId: './country-create', nav: true, title: 'Country Creation' },
-      { route: 'update',  name: 'update', moduleId: './country-edit', nav: true, title: 'Country Update' }
+      { route: ':id', href: '',  name: 'update', moduleId: './country-update', nav: false, title: 'Country Update' }
     ]);
 
     this.router = router;

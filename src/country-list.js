@@ -31,6 +31,15 @@ export class CountryList {
         .withBaseUrl('http://localhost:8080/');
     });
 
+    http.fetch('countries/enabled/true')
+      .then(response => response.json())
+      .then(data => {
+        this.countries = data.list;
+      });
+  }
+  
+  showAll() {
+    const http = this.http = this.getHttpClient();
     http.fetch('countries')
       .then(response => response.json())
       .then(data => {
